@@ -16,6 +16,10 @@ Licensed under MIT License.
 
 ## Changelog
 
+### 1.0.2
+
+Updated command/keyword information to PEBakery Prerelease beta 5's.
+
 ### 1.0.1
 
 Updated command/keyword information to PEBakery Prerelease beta 4's.
