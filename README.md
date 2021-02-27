@@ -4,11 +4,23 @@ Notepad++ UDL file for PEBakery language.
 
 ## Feature
 
-- Syntax Highlighting for PEBakery files (.script, .project)
+- Syntax Highlighting for PEBakery files (.script, .project) on Notepad++
 
 ## Install
 
-Refer to Notepad++'s [official document](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
+Run `Install.cmd` to copy XML file into predefined location.
+
+### Copy XML file
+
+Copy `PEBakery-UDL.xml` into `%AppData%\Notepad++\userDefineLangs` directory, and restart Notepad++. `Install.cmd` does that automatically.
+
+### Import within Notepad++ GUI
+
+You can import `PEBakery-UDL.xml` within Notepad++ GUI. Click `Languages > Define Your Language...` to access UDL Dialog Box.
+
+#### Issue
+
+In Noteoad++ 7.6.3 or higher, importing through UDL Dialog Box can corrupt font names, due to [a bug](https://github.com/notepad-plus-plus/notepad-plus-plus/issues/5630). We recommend manual copy until the bug is resolved.
 
 ## License
 
