@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<NotepadPlus>
+	<AutoComplete>
+		<Environment ignoreCase="yes" startFunc="," stopFunc="&#xD;&#xA;" paramSeparator="," terminal="" additionalWordChar=""/>
+		<!-- Archive Commands -->
+		<KeyWord name="Compress" func="yes">
+			<Overload retVal="" descr="Compress a file or directory into an archive.">
+				<Param name="Format" />
+				<Param name="SrcPath" />
+				<Param name="DestArchive" />
+				<Param name="[CompressionLevel]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CopyOrExpand" func="yes">
+			<Overload retVal="" descr="Copy or Extract files from a Microsoft Cabinet Archive (*.CAB).">
+				<Param name="SrcFile" />
+				<Param name="DestPath" />
+				<Param name="[[PRESERVE]" />
+				<Param name="[NOWARN]]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Decompress" func="yes">
+			<Overload retVal="" descr="Extract files from an archive.">
+				<Param name="FileName" />
+				<Param name="DestDir" />
+				<Param name="[Password=]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Expand" func="yes">
+			<Overload retVal="" descr="Extract files from a Microsoft Cabinet Archive (*.CAB).">
+				<Param name="CabFile" />
+				<Param name="DestDir" />
+				<Param name="[FileName]" />
+				<Param name="[[PRESERVE]" />
+				<Param name="[NOWARN]]" />
+			</Overload>
+		</KeyWord>
+		<!-- Branch Commands -->
+		<KeyWord name="Exec" func="yes">
+			<Overload retVal="" descr="Runs the commands found in a named [Section] of a script file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="[Parameters]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="If" func="yes">
+			<Overload retVal="" descr="Conditionally run a single statement.">
+				<Param name="Condition" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Conditionally run a block of statements.&#xA;&#xD;&#xA;&#xD;If,Condition,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End">
+				<Param name="Condition" />
+				<Param name="Begin" />
+			</Overload>
+			<Overload retVal="" descr="Displays a dialog that asks the user a question, then uses their response to determine if the command should be executed.">
+				<Param name="QUESTION" />
+				<Param name="Question" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Displays a dialog that asks the user a question, then uses their response to determine if the command should be executed.">
+				<Param name="QUESTION" />
+				<Param name="Question" />
+				<Param name="Timeout (seconds)" />
+				<Param name="DefaultAnswer (Yes/No)" />
+				<Param name="Command" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Else" func="yes">
+			<Overload retVal="" descr="Conditionally run a single statement.">
+				<Param name="Condition" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Conditionally run a block of statements.
+			If,Condition,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End&#xA;&#xD;Else,Condition,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End">
+				<Param name="Condition" />
+				<Param name="Begin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Loop" func="yes">
+			<Overload retVal="" descr="Loops through a series of commands based on the value of a counter.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="StartValue" />
+				<Param name="EndValue" />
+				<Param name="[Parameters]" />
+			</Overload>
+			<Overload retVal="" descr="Immediately exits the loop. The script will continue processing with the next line following the Loop command.">
+				<Param name="Break" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LoopLetter" func="yes">
+			<Overload retVal="" descr="Loops through a range of letters in alphabetical order.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="StartLetter" />
+				<Param name="EndLetter" />
+				<Param name="[Parameters]" />
+			</Overload>
+			<Overload retVal="" descr="Immediately exits the loop. The script will continue processing with the next line following the LoopLetter command.">
+				<Param name="Break" />
+			</Overload>
+		</KeyWord>
+		<!-- TODO: Operators -->
+		<KeyWord name="Run" func="yes">
+			<Overload retVal="" descr="Runs the commands found in a named [Section] of a script file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="[Parameters]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RunEx" func="yes">
+			<Overload retVal="" descr="RunEx is an extended form of the standard Run command that allows passing parameters by reference as well as by value.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="[Parameters]" />
+			</Overload>
+		</KeyWord>
+		<!-- Control Commands -->
+		<KeyWord name="AddVariables" func="yes">
+			<Overload retVal="" descr="Reads variables from another section, script, or file into the current scripts run-time environment.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="[GLOBAL]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Beep" func="yes">
+			<Overload retVal="" descr="Provide auditory feedback to the user.">
+				<Param name="SoundType" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Exit" func="yes">
+			<Overload retVal="" descr="Forces the current script to terminate and continues processing with the next script.">
+				<Param name="Message" />
+				<Param name="[NOWARN]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GetParam" func="yes">
+			<Overload retVal="" descr="Retrieves parameters passed to a section and converts them into variables.">
+				<Param name="Index" />
+				<Param name="%Variable%" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Halt" func="yes">
+			<Overload retVal="" descr="Forces the current build to terminate.">
+				<Param name="Message" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Set" func="yes">
+			<Overload retVal="" descr="Changes or defines the value of a variable.">
+				<Param name="%Variable%" />
+				<Param name="Value" />
+				<Param name="[GLOBAL | PERMANENT]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SetMacro" func="yes">
+			<Overload retVal="" descr="Defines a procedure to be executed when a specific keyword is encountered.">
+				<Param name="Name" />
+				<Param name="Command" />
+				<Param name="[GLOBAL | PERMANENT]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Wait" func="yes">
+			<Overload retVal="" descr="Pause execution for a specific amount of time.">
+				<Param name="Seconds" />
+			</Overload>
+		</KeyWord>
+		<!-- File & Directory Commands -->
+		<KeyWord name="DirCopy" func="yes">
+			<Overload retVal="" descr="Copies a directory along with all sub-directories and files.">
+				<Param name="SrcDir" />
+				<Param name="DestDir" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DirDelete" func="yes">
+			<Overload retVal="" descr="Deletes a directory and all files and sub-directories it contains.">
+				<Param name="DirPath" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DirMake" func="yes">
+			<Overload retVal="" descr="Creates a directory.">
+				<Param name="DestDir" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DirMove" func="yes">
+			<Overload retVal="" descr="Moves a directory.">
+				<Param name="SrcDir" />
+				<Param name="DestPath" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DirSize" func="yes">
+			<Overload retVal="" descr="Gets the size of a directory.">
+				<Param name="DirPath" />
+				<Param name="%DestVar%" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FileCopy" func="yes">
+			<Overload retVal="" descr="Copies one or more files.">
+				<Param name="SrcFile" />
+				<Param name="DestPath" />
+				<Param name="[[PRESERVE]" />
+				<Param name="[NOWARN]" />
+				<Param name="[NOREC]]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FileCreateBlank" func="yes">
+			<Overload retVal="" descr="Creates an empty file.">
+				<Param name="FilePath" />
+				<Param name="[[Encoding=]" />
+				<Param name="[PRESERVE]" />
+				<Param name="[NOWARN]]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FileDelete" func="yes">
+			<Overload retVal="" descr="Deletes a file.">
+				<Param name="FilePath" />
+				<Param name="DestPath" />
+				<Param name="[[NOWARN]" />
+				<Param name="[NOREC]]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FileRename" func="yes">
+			<Overload retVal="" descr="Rename or move a file.">
+				<Param name="SrcPath" />
+				<Param name="DestPath" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FileSize" func="yes">
+			<Overload retVal="" descr="Gets the size of a file.">
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PathMove" func="yes">
+			<Overload retVal="" descr="Moves a file or directory.">
+				<Param name="SrcPath" />
+				<Param name="DestPath" />
+			</Overload>
+		</KeyWord>
+		<!-- Hash Commands -->
+		<KeyWord name="Hash" func="yes">
+			<Overload retVal="" descr="Calculates the cryptographic hash of a file.">
+				<Param name="HashType" />
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>
+		</KeyWord>
+		<!-- INI Commands -->
+		<KeyWord name="IniAddSection" func="yes">
+			<Overload retVal="" descr="Adds a new empty section inside a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniCompact" func="yes">
+			<Overload retVal="" descr="Compacts an .ini file, removing extra white space such as leading/trailing spaces and padding between key=value pairs.">
+				<Param name="FileName" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniDelete" func="yes">
+			<Overload retVal="" descr="Deletes a key from a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="Key" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniDeleteSection" func="yes">
+			<Overload retVal="" descr="Deletes a section, along with all keys and values it contains from a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniMerge" func="yes">
+			<Overload retVal="" descr="Combines the contents of two .ini files.">
+				<Param name="SrcFile" />
+				<Param name="DestFile" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniRead" func="yes">
+			<Overload retVal="" descr="Reads a value from a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="Key" />
+				<Param name="%DestVar%" />
+				<Param name="[Default=&quot;&quot;]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IniReadSection" func="yes">
+			<Overload retVal="" descr="Reads the contents of a section in a standard .ini file and outputs the result as a list.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="Key" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+		</KeyWord>		
+		<KeyWord name="IniWrite" func="yes">
+			<Overload retVal="" descr="Writes a value to a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="Key" />
+				<Param name="Value" />
+			</Overload>
+		</KeyWord>		
+		<KeyWord name="IniWriteTextLine" func="yes">
+			<Overload retVal="" descr="Write a line of text to a section inside a standard .ini file.">
+				<Param name="FileName" />
+				<Param name="Section" />
+				<Param name="Line" />
+				<Param name="[APPEND]" />
+			</Overload>
+		</KeyWord>			
+		<!-- Interface Commands -->
+		<KeyWord name="AddInterface" func="yes">
+			<Overload retVal="" descr="Loads variables from another interface section into the local scope.">
+				<Param name="ScriptFile" />
+				<Param name="Interface" />
+				<Param name="Prefix" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="Echo" func="yes">
+			<Overload retVal="" descr="Display a message in the build window while the script is running.">
+				<Param name="Message" />
+				<Param name="[WARN]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="EchoFile" func="yes">
+			<Overload retVal="" descr="Display a message in the build window while the script is running.">
+				<Param name="SrcFile" />
+				<Param name="[WARN]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="Message" func="yes">
+			<Overload retVal="" descr="Displays a simple message box with optional timeout.">
+				<Param name="Message" />
+				<Param name="Icon" />
+				<Param name="[Timeout]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="ReadInterface" func="yes">
+			<Overload retVal="" descr="Reads the properties of an interface control.">
+				<Param name="Property" />
+				<Param name="ScriptFile" />
+				<Param name="Interface" />
+				<Param name="ControlName" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="UserInput" func="yes">
+			<Overload retVal="" descr="Prompts the user to select a file or directory path.">
+				<Param name="BrowserType" />
+				<Param name="InitPath" />
+				<Param name="%DestVar%" />
+				<Param name="[[Title=]" />
+				<Param name="[Filter=]]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="Visible" func="yes">
+			<Overload retVal="" descr="(Deprecated) Sets the visibility of a UI control.">
+				<Param name="%Control%" />
+				<Param name="TRUE|FALSE" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WriteInterface" func="yes">
+			<Overload retVal="" descr="Changes the properties of an interface control.">
+				<Param name="Property" />
+				<Param name="ScriptFile" />
+				<Param name="Interface" />
+				<Param name="ControlName" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+		</KeyWord>	
+		<!-- List Commands -->
+		<KeyWord name="List" func="yes">
+			<Overload retVal="" descr="Append a value to the end of a list.">
+				<Param name="Append" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Returns the number of items in a list.">
+				<Param name="Count" />
+				<Param name="%ListVar%" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Extracts a specific item from a list structure.">
+				<Param name="Get" />
+				<Param name="%ListVar%" />
+				<Param name="Index" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>.
+			<Overload retVal="" descr="Insert a new value into a specific location in a list.">
+				<Param name="Insert" />
+				<Param name="%ListVar%" />
+				<Param name="Index" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Returns the last position of the given value inside the specified list. (Case Insensitive)">
+				<Param name="LastPos" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Returns the last position of the given value inside the specified list. (Case Sensitive)">
+				<Param name="LastPosX" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Returns the position of the given value inside the specified list. (Case Insensitive)">
+				<Param name="Pos" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Returns the position of the given value inside the specified list. (Case Sensitive)">
+				<Param name="PosX" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="%DestVar%" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Removes all occurrences of a value from a list. (Case Insensitive)">
+				<Param name="Remove" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Removes a value from a specific index in a list.">
+				<Param name="RemoveAt" />
+				<Param name="%ListVar%" />
+				<Param name="Index" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Removes all occurrences of a value from a list. (Case Sensitive)">
+				<Param name="RemoveX" />
+				<Param name="%ListVar%" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Writes a value to a specific location in a list structure.">
+				<Param name="Set" />
+				<Param name="%ListVar%" />
+				<Param name="Index" />
+				<Param name="Value" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Sorts a list into alphabetical/lexicographical order. (Case Insensitive)">
+				<Param name="Sort" />
+				<Param name="%ListVar%" />
+				<Param name="Order" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Sorts a list into natural order. (Case Insensitive)">
+				<Param name="SortN" />
+				<Param name="%ListVar%" />
+				<Param name="Order" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Sorts a list into natural order. (Case Sensitive)">
+				<Param name="SortNX" />
+				<Param name="%ListVar%" />
+				<Param name="Order" />
+				<Param name="[Delim=|]" />
+			</Overload>
+			<Overload retVal="" descr="Sorts a list into natural order. (Case Sensitive)">
+				<Param name="SortX" />
+				<Param name="%ListVar%" />
+				<Param name="Order" />
+				<Param name="[Delim=|]" />
+			</Overload>		
+		</KeyWord>			
+		<!-- Math Operations -->		
+		<KeyWord name="Math" func="yes">
+			<Overload retVal="" descr="Calculates the absolute value of a number.">
+				<Param name="Abs" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+			</Overload>	
+			<Overload retVal="" descr="Adds two numbers.">
+				<Param name="Add" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs a bitwise AND operation.">
+				<Param name="BitAnd" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs a bitwise NOT operation.">
+				<Param name="BitNot" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+			</Overload>	
+			<Overload retVal="" descr="Performs a bitwise OR operation.">
+				<Param name="BitOr" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs a bit shifting operation.">
+				<Param name="BitShift" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+				<Param name="Direction" />
+				<Param name="Shift" />
+				<Param name="Size" />		
+				<Param name="[UNSIGNED]" />				
+			</Overload>	
+			<Overload retVal="" descr="Performs a bitwise exclusive OR operation.">
+				<Param name="BitXor" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs an AND test on two Boolean values.">
+				<Param name="BoolAnd" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs an Not test on two Boolean values.">
+				<Param name="BoolNot" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+				<Param name="Size" />
+			</Overload>	
+			<Overload retVal="" descr="Performs an OR test on two Boolean values.">
+				<Param name="BoolOr" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Performs an exclusive OR test on two Boolean values.">
+				<Param name="BoolXor" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Returns a number rounded up to the next integer.">
+				<Param name="Ceil" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+				<Param name="Unit" />
+			</Overload>	
+			<Overload retVal="" descr="Converts a a hexadecimal string to it's numeric representation.">
+				<Param name="Dec" />
+				<Param name="%DestVar%" />
+				<Param name="Hex" />
+				<Param name="Size" />
+			</Overload>	
+			<Overload retVal="" descr="Divides two numbers.">
+				<Param name="Div" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Returns a number rounded down to the closest integer.">
+				<Param name="Floor" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+				<Param name="Unit" />
+			</Overload>	
+			<Overload retVal="" descr="Convert an integer to it's hexadecimal representation.">
+				<Param name="Hex" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+				<Param name="Size" />
+			</Overload>	
+			<Overload retVal="" descr="Divides two integers and returns the quotient and remainder.">
+				<Param name="IntDiv" />
+				<Param name="%QuotientVar%" />
+				<Param name="%RemainderVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Multiplies two numbers.">
+				<Param name="Mul" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Calculates the additive inverse of a value (n * -1).">
+				<Param name="Neg" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+			</Overload>	
+			<Overload retVal="" descr="Raises a number to the power.">
+				<Param name="Pow" />
+				<Param name="%DestVar%" />
+				<Param name="Base" />
+				<Param name="PowerOf" />
+			</Overload>	
+			<Overload retVal="" descr="Generates a pseudo-random positive integer.">
+				<Param name="Rand" />
+				<Param name="%DestVar%" />
+				<Param name="[Min]" />
+				<Param name="[Max]" />
+			</Overload>	
+			<Overload retVal="" descr="Returns a integer rounded to the nearest whole number.">
+				<Param name="Round" />
+				<Param name="%DestVar%" />
+				<Param name="Value" />
+				<Param name="Unit" />
+			</Overload>	
+			<Overload retVal="" descr="Subtracts two numbers.">
+				<Param name="Sub" />
+				<Param name="%DestVar%" />
+				<Param name="Value1" />
+				<Param name="Value2" />
+			</Overload>	
+			<Overload retVal="" descr="Converts an Unsigned Integer to a Signed Integer.">
+				<Param name="ToSign" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+				<Param name="Size" />
+			</Overload>	
+			<Overload retVal="" descr="Converts an Signed Integer to an Unsigned Integer.">
+				<Param name="ToUnSign" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+				<Param name="Size" />
+			</Overload>	
+		</KeyWord>				
+		<!-- Network Commands -->			
+		<KeyWord name="WebGet" func="yes">
+			<Overload retVal="#r" descr="Downloads files from the Internet.">
+				<Param name="URL" />
+				<Param name="DestPath" />
+				<Param name="[HashType=HashDigest]" />
+				<Param name="[[Referer=]" />
+				<Param name="[TimeOut=]" />
+				<Param name="[NOERR]]" />
+			</Overload>
+		</KeyWord>
+		<!-- Registry Commands -->	
+		<KeyWord name="RegCopy" func="yes">
+			<Overload retVal="" descr="Copies all subkeys and values from one registry key to another.">
+				<Param name="SrcKey" />
+				<Param name="SrcKeyPath" />
+				<Param name="DestKey" />
+				<Param name="DestKeyPath" />
+				<Param name="[WILDCARD]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegDelete" func="yes">
+			<Overload retVal="" descr="Deletes a key or value from the registry.">
+				<Param name="HKEY" />
+				<Param name="KeyPath" />
+				<Param name="[ValueName]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegExport" func="yes">
+			<Overload retVal="" descr="Exports the contents of a registry key to a *.reg file.">
+				<Param name="HKEY" />
+				<Param name="KeyPath" />
+				<Param name="RegFile" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegHiveLoad" func="yes">
+			<Overload retVal="" descr="Loads an external registry hive onto your local registry.">
+				<Param name="KeyPath" />
+				<Param name="HiveFile" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegHiveUnload" func="yes">
+			<Overload retVal="" descr="Unloads an external registry hive from your local registry.">
+				<Param name="KeyPath" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegImport" func="yes">
+			<Overload retVal="" descr="Imports the contents of a registry file (*.reg) to your local registry system.">
+				<Param name="RegFile" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegMulti" func="yes">
+			<Overload retVal="" descr="Modify a multi-string value in the registry.">
+				<Param name="HKEY" />
+				<Param name="KeyPath" />
+				<Param name="ValueName" />
+				<Param name="Action" />
+				<Param name="Arg1" />
+				<Param name="Arg2" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegRead" func="yes">
+			<Overload retVal="" descr="Reads a value from the registry.">
+				<Param name="HKEY" />
+				<Param name="KeyPath" />
+				<Param name="ValueName" />
+				<Param name="%DestVar%" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegWrite" func="yes">
+			<Overload retVal="" descr="Create or modify a key or value in the registry.">
+				<Param name="HKEY" />
+				<Param name="ValueType" />
+				<Param name="KeyPath" />
+				<Param name="ValueName" />
+				<Param name="Value" />
+				<Param name="[NOWARN]" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RegWriteEx" func="yes">
+			<Overload retVal="" descr="Create or modify a key or value in the registry.">
+				<Param name="HKEY" />
+				<Param name="ValueType" />
+				<Param name="KeyPath" />
+				<Param name="ValueName" />
+				<Param name="Value" />
+				<Param name="[NOWARN]" />
+			</Overload>
+		</KeyWord>			
+		<!-- Script Commands -->			
+		<KeyWord name="Encode" func="yes">
+			<Overload retVal="" descr="Embeds files inside a script.">
+				<Param name="ScriptFile" />
+				<Param name="DirName" />
+				<Param name="FilePath" />
+				<Param name="[Compression]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ExtractFile" func="yes">
+			<Overload retVal="" descr="Extracts a single file from inside a script.">
+				<Param name="ScriptFile" />
+				<Param name="DirName" />
+				<Param name="FileName" />
+				<Param name="DestDir" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ExtractAndRun" func="yes">
+			<Overload retVal="" descr="Extracts a single file from inside a script and executes it.">
+				<Param name="ScriptFile" />
+				<Param name="DirName" />
+				<Param name="FileName" />
+				<Param name="[Parameters]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ExtractAllFiles" func="yes">
+			<Overload retVal="" descr="Extracts all files from the specified directory inside a script.">
+				<Param name="ScriptFile" />
+				<Param name="DirName" />
+				<Param name="DestDir" />
+			</Overload>
+		</KeyWord>			
+		<!-- String Management Commands -->	
+		<KeyWord name="StrFormat" func="yes">
+			<Overload retVal="" descr="Converts a human readable string representing the size of a file or directory to a machine readable integer representing the size in bytes.">
+				<Param name="BytesToInt" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>
+			<Overload retVal="" descr="Rounds a value up to the next formatted size (KB/MB/GB/TB/PB).">
+				<Param name="Ceil" />
+				<Param name="Integer" />
+				<Param name="CeilTo" />
+			</Overload>
+			<Overload retVal="" descr="Removes specific character(s) from the beginning or end of a string if they exist.">
+				<Param name="CTrim" />
+				<Param name="String" />
+				<Param name="Chars" />
+				<Param name="%DestVar%" />
+			</Overload>			
+			<Overload retVal="" descr="Returns the current Date and Time in the specified format.">
+				<Param name="Date" />
+				<Param name="%DestVar%" />
+				<Param name="FormatString" />
+			</Overload>			
+			<Overload retVal="" descr="Decrements a number or letter by a value of n.">
+				<Param name="Dec" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+			</Overload>				
+			<Overload retVal="" descr="Returns a path without the filename or extension.">
+				<Param name="DirPath" />
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="(Deprecated) Divides two numbers.">
+				<Param name="Div" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+			</Overload>				
+			<Overload retVal="" descr="Returns the file extension from a path.">
+				<Param name="Ext" />
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="Returns the file extension from a path.">
+				<Param name="FileName" />
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="Rounds a value down to the formatted size (KB/MB/GB/TB/PB).">
+				<Param name="Floor" />
+				<Param name="%Integer%" />
+				<Param name="FloorTo" />
+			</Overload>	
+			<Overload retVal="" descr="(Deprecated) Convert an integer to it's hexadecimal representation.">
+				<Param name="Hex" />
+				<Param name="Integer" />
+				<Param name="%DestVar%" />
+			</Overload>		
+			<Overload retVal="" descr="Increments a number or letter by a value of n.">
+				<Param name="Inc" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+			</Overload>	
+			<Overload retVal="" descr="Converts a number of bytes to a more human readable format.">
+				<Param name="IntToBytes" />
+				<Param name="Bytes" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="Converts a string to lowercase.">
+				<Param name="LCase" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="Returns a number of characters from the left-hand side of a string.">
+				<Param name="Left" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="Returns the number of characters in a string.">
+				<Param name="Len" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>	
+			<Overload retVal="" descr="(Deprecated) Converts a DOS 8.3 path to a long NT path.">
+				<Param name="LongPath" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Removes a number of characters from the left-hand side of a string.">
+				<Param name="LTrim" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Extracts a number of characters from a specific starting point in a string.">
+				<Param name="Mid" />
+				<Param name="String" />
+				<Param name="StartPos" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="(Deprecated) Multiplies two numbers.">
+				<Param name="Mult" />
+				<Param name="%DestVar%" />
+				<Param name="Integer" />
+			</Overload>				
+			<Overload retVal="" descr="Removes any and all numbers from the end of a string.">
+				<Param name="NTrim" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Right-aligns the characters in a string by padding them with a specified character on the left, up to a specified total length.">
+				<Param name="PadLeft" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="PadChar" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Left-aligns the characters in a string by padding them with a specified character on the right, up to a specified total length.">
+				<Param name="PadRight" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="PadChar" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Combines a path with a filename to form a full path.">
+				<Param name="PathCombine" />
+				<Param name="DirPath" />
+				<Param name="FileName" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Returns the position of the given SubString inside the specified String. (Case Insensitive)">
+				<Param name="Pos" />
+				<Param name="String" />
+				<Param name="SubString" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Returns the position of the given SubString inside the specified String. (Case Sensitive)">
+				<Param name="PosX" />
+				<Param name="String" />
+				<Param name="SubString" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Replaces all occurrences of a substring within a string. (Case Insensitive)">
+				<Param name="Replace" />
+				<Param name="String" />
+				<Param name="SearchString" />
+				<Param name="ReplaceString" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Replaces all occurrences of a substring within a string. (Case Sensitive)">
+				<Param name="ReplaceX" />
+				<Param name="String" />
+				<Param name="SearchString" />
+				<Param name="ReplaceString" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Returns a number of characters from the right-hand side of a string.">
+				<Param name="Right" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Rounds a value to the nearest formatted size (KB/MB/GB/TB/PB).">
+				<Param name="Round" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Removes a number of characters from the right-hand side of a string.">
+				<Param name="RTrim" />
+				<Param name="String" />
+				<Param name="Count" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="(Deprecated) Converts a path into DOS 8.3 compatible format.">
+				<Param name="ShortPath" />
+				<Param name="Path" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Splits up a string into substrings based on the given delimiters.">
+				<Param name="Split" />
+				<Param name="String" />
+				<Param name="Delimiter" />
+				<Param name="Index" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Converts a string to uppercase.">
+				<Param name="UCase" />
+				<Param name="String" />
+				<Param name="%DestVar%" />
+			</Overload>	
+		</KeyWord>			
+		<!-- System Commands -->			
+		<KeyWord name="System" func="yes">
+			<Overload retVal="" descr="Toggles the mouse cursor between the WAIT and NORMAL state.">
+				<Param name="Cursor" />
+				<Param name="State" />
+			</Overload>
+			<Overload retVal="" descr="Ends localization of variables within a script.">
+				<Param name="EndLocal" />
+			</Overload>
+			<Overload retVal="" descr="Prevents a process from failing in the event an error occurs.">
+				<Param name="ErrorOff" />
+				<Param name="[Lines]" />
+			</Overload>			
+			<Overload retVal="" descr="Gets the value of environment variable from the host operating system.">
+				<Param name="GetEnv" />
+				<Param name="EnvVar" />
+				<Param name="%DestVar%" />
+			</Overload>			
+			<Overload retVal="" descr="Returns the highest available free drive letter, Usually the Z: drive.">
+				<Param name="GetFreeDrive" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Returns the free disk space of a path in Megabytes.">
+				<Param name="GetFreeSpace" />
+				<Param name="Path" />
+				<Param name="%DestVar%" />
+			</Overload>					
+			<Overload retVal="" descr="Checks to see if PEBakery was started by an account with Admin privileges.">
+				<Param name="IsAdmin" />
+				<Param name="%DestVar%" />
+			</Overload>				
+			<Overload retVal="" descr="Temporarily load a specific script or path into the project.">
+				<Param name="LoadNewScript" />
+				<Param name="TreePath" />
+				<Param name="[[NOREC]" />
+				<Param name="[NOWARN]" />
+				<Param name="[PRESERVE]]" />
+			</Overload>			
+			<Overload retVal="" descr="Scans the Projects directory for new/modified projects and scripts and adds them to the project tree.">
+				<Param name="RefreshAllScripts" />
+			</Overload>			
+			<Overload retVal="" descr="Refresh a specific script or path in the project.">
+				<Param name="RefreshScript" />
+				<Param name="FilePath" />
+				<Param name="[NOREC]" />
+			</Overload>					
+			<Overload retVal="" descr="Specifies the command to be executed before the current project build terminates.">
+				<Param name="OnBuildExit" />
+				<Param name="Command" />
+			</Overload>					
+			<Overload retVal="" descr="Specifies the command to be executed before the current script terminates.">
+				<Param name="OnScriptExit" />
+				<Param name="Command" />
+			</Overload>				
+			<Overload retVal="" descr="Refreshes the Graphical Interface of the current script.">
+				<Param name="RefreshInterface" />
+			</Overload>				
+			<Overload retVal="" descr="Exports the current logfile.">
+				<Param name="SaveLog" />
+				<Param name="DestPath" />
+				<Param name="[Format]" />
+			</Overload>				
+			<Overload retVal="" descr="Starts localization of variables within a script.">
+				<Param name="SetLocal" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ShellExecute" func="yes">
+			<Overload retVal="#r" descr="Runs an external program and waits for it to terminate before processing continues.">
+				<Param name="Action" />
+				<Param name="FilePath" />
+				<Param name="[Params]" />
+				<Param name="[WorkDir]" />
+				<Param name="[%ExitOutVar%]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ShellExecuteDelete" func="yes">
+			<Overload retVal="#r" descr="Runs an external program and waits for it to terminate before processing continues. Once the program terminates it will be deleted.">
+				<Param name="Action" />
+				<Param name="FilePath" />
+				<Param name="[Params]" />
+				<Param name="[WorkDir]" />
+				<Param name="[%ExitOutVar%]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="ShellExecuteEx" func="yes">
+			<Overload retVal="" descr="Runs an external program and continues processing immediately.">
+				<Param name="Action" />
+				<Param name="FilePath" />
+				<Param name="[Params]" />
+				<Param name="[WorkDir]" />
+			</Overload>
+		</KeyWord>			
+		<!-- Text Commands -->			
+		<KeyWord name="TXTAddLine" func="yes">
+			<Overload retVal="" descr="Inserts a line of text at the specified location inside a file.">
+				<Param name="FileName" />
+				<Param name="String" />
+				<Param name="Action" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="TXTDelEmptyLines" func="yes">
+			<Overload retVal="" descr="Removes all empty lines from a given text file.">
+				<Param name="FileName" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="TXTDelLine" func="yes">
+			<Overload retVal="" descr="Removes lines from a given text file that begin with a specific string.">
+				<Param name="FileName" />
+				<Param name="String" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="TXTDelSpaces" func="yes">
+			<Overload retVal="" descr="Delete all spaces from the beginning and end of each line inside a text file.">
+				<Param name="FileName" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="TXTReplace" func="yes">
+			<Overload retVal="" descr="Search inside a given file and replace all text that matches the value of OldString and replace it with NewString.">
+				<Param name="FileName" />
+				<Param name="OldString" />
+				<Param name="NewString" />
+			</Overload>
+		</KeyWord>			
+		<!-- WIM Commands -->			
+		<KeyWord name="WimAppend" func="yes">
+			<Overload retVal="" descr="Adds an image to an existing Windows Imaging (.wim) file.">
+				<Param name="SrcDir" />
+				<Param name="DestWim" />
+				<Param name="[[ImageName=]" />
+				<Param name="[ImageDesc=]" />
+				<Param name="[Flags=]" />
+				<Param name="[DeltaIndex=]" />
+				<Param name="[BOOT]" />
+				<Param name="[CHECK]" />
+				<Param name="[NOACL]]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimApply" func="yes">
+			<Overload retVal="" descr="Extracts (applies) an image from a Windows Imaging (.wim) file.">
+				<Param name="SrcDir" />
+				<Param name="ImageIndex" />
+				<Param name="DestDir" />
+				<Param name="[[Split=]" />
+				<Param name="[CHECK]" />
+				<Param name="[NOACL]" />
+				<Param name="[NOATTRIB]]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimCapture" func="yes">
+			<Overload retVal="" descr="Creates a new Windows Imaging (.wim) file.">
+				<Param name="SrcDir" />
+				<Param name="DestWim" />
+				<Param name="Compress" />
+				<Param name="[[ImageName=]" />
+				<Param name="[ImageDesc=]" />
+				<Param name="[Flags=]" />
+				<Param name="[BOOT]" />
+				<Param name="[CHECK]" />
+				<Param name="[NOACL]]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimDelete" func="yes">
+			<Overload retVal="" descr="Deletes an image from a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="ImageIndex" />
+				<Param name="[CHECK]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimExport" func="yes">
+			<Overload retVal="" descr="Exports an image from a WIM file.">
+				<Param name="SrcWim" />
+				<Param name="ImageIndex" />
+				<Param name="DestWim" />
+				<Param name="[[ImageName=]" />
+				<Param name="[ImageDesc=]" />
+				<Param name="[Split=]" />
+				<Param name="[ReComp=]" />
+				<Param name="[BOOT]" />
+				<Param name="[{CHECK]|[NOCHECK]}]]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimExtract" func="yes">
+			<Overload retVal="" descr="Extracts one or more files or directory trees from a Windows Imaging (.wim) file.">
+				<Param name="SrcDir" />
+				<Param name="ImageIndex" />
+				<Param name="ExtractPath" />
+				<Param name="DestDir" />
+				<Param name="[[Split=]" />
+				<Param name="[CHECK]" />
+				<Param name="[NOACL]" />
+				<Param name="[NOATTRIB]]" />
+			</Overload>
+		</KeyWord>			
+		<KeyWord name="WimExtractBulk" func="yes">
+			<Overload retVal="" descr="Uses a list file to extract one or more files or directory trees from a Windows Imaging (.wim) file.">
+				<Param name="SrcWim" />
+				<Param name="ImageIndex" />
+				<Param name="ListFile" />
+				<Param name="DestDir" />
+				<Param name="[[Split=]" />
+				<Param name="[CHECK]" />
+				<Param name="[NOACL]" />
+				<Param name="[NOATTRIB]" />
+				<Param name="[NOERR]" />
+				<Param name="[NOWARN]]" />
+			</Overload>
+		</KeyWord>		
+		<KeyWord name="WimInfo" func="yes">
+			<Overload retVal="" descr="Retrieves information about a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="ImageIndex" />
+				<Param name="Property" />
+				<Param name="%DestVar%" />
+				<Param name="[NOERR]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimMount" func="yes">
+			<Overload retVal="" descr="Mounts an image in a Windows Imaging File (.WIM) to the specified directory.">
+				<Param name="WimFile" />
+				<Param name="Index" />
+				<Param name="MountDir" />
+				<Param name="MountOption" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimOptimize" func="yes">
+			<Overload retVal="" descr="Rebuilds a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="[ReComp=]" />
+				<Param name="[{CHECK]|[NOCHECK]}]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimPathAdd" func="yes">
+			<Overload retVal="" descr="Adds a file or directory tree to a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="ImageIndex" />
+				<Param name="SrcPath" />
+				<Param name="DestPath" />
+				<Param name="[[CHECK]" />
+				<Param name="[NOACL]" />
+				<Param name="[PRESERVE]" />
+				<Param name="[REBUILD]]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimPathDelete" func="yes">
+			<Overload retVal="" descr="Removes a file or directory tree from a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="ImageIndex" />
+				<Param name="Path" />
+				<Param name="[[CHECK]" />
+				<Param name="[REBUILD]]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimPathRename" func="yes">
+			<Overload retVal="" descr="Moves or Renames a file or directory tree in a Windows Imaging (.wim) file.">
+				<Param name="WimFile" />
+				<Param name="ImageIndex" />
+				<Param name="SrcPath" />
+				<Param name="DestPath" />
+				<Param name="[[CHECK]" />
+				<Param name="[REBUILD]]" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="WimUnmount" func="yes">
+			<Overload retVal="" descr="Unmounts a mounted image in a Windows Imaging File (.WIM) from the specified directory.">
+				<Param name="MountDir" />
+				<Param name="UnmountOption" />
+			</Overload>
+		</KeyWord>
+	</AutoComplete>
+</NotepadPlus>
