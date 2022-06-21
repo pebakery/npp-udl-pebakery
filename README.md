@@ -16,15 +16,15 @@ Run `Install.cmd` as Administrator.
 ### Copy XML files
 
 1. Close NotePad++ 
-1. Copy `userDefineLangs\PEBakery.UDL.xml` into the `%AppData%\Notepad++\userDefineLangs` directory.
+1. Copy `userDefineLangs\PEBakery.udl.xml` into the `%AppData%\Notepad++\userDefineLangs` directory.
 1. Copy `functionList\PEBakery.xml` into the `%AppData%\Notepad++\functionList` directory.
 1. Copy `autoCompletion\PEBakery.xml` into the `%ProgramFiles%\Notepad++\autoCompletion` directory.
 
 ### Import within Notepad++ GUI
 
-If you are only interested in Syntax Highlighting you can import `PEBakery.UDL.xml` from within the Notepad++ GUI. Click `Languages > Define Your Language...` to access UDL Dialog Box.
+If you are only interested in the Syntax Highlighting, you can import `PEBakery.udl.xml` from within the Notepad++ GUI. Click `Languages > Define Your Language...` to access UDL Dialog Box.
 
-In Notepad++ 7.6.3 or higher, importing through UDL Dialog Box can corrupt font names, due to [a bug](https://github.com/notepad-plus-plus/notepad-plus-plus/issues/5630) within NotePad++. We recommend manual copy until the bug is resolved.
+In Notepad++ 7.6.3 or higher, importing through UDL Dialog Box can corrupt font names, due to [a bug](https://github.com/notepad-plus-plus/notepad-plus-plus/issues/5630) within NotePad++. We recommend manual copy until the bug has resolved.
 
 ## License
 
@@ -34,7 +34,7 @@ Licensed under MIT License.
 
 ### 1.2
 
-- Updated keywords and commands for PEBakery Prerelease beta 7
+- Updated keywords and commands for PEBakery v1.0.0
 - Added functionList for section headings
 - Added AutoComplete/Parameter Hints. (Note: Due to PEBakery's comma delimited syntax and the way Notepad++ has implemented AutoComplete, the parameter hints will not be shown after the 2nd argument.)
 
