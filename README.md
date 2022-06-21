@@ -28,31 +28,8 @@ In Notepad++ 7.6.3 or higher, importing through UDL Dialog Box can corrupt font 
 
 ## License
 
-Licensed under MIT License.
+Licensed under [MIT License](./LICENSE).
 
-## Changelog
+# ChangeLog
 
-### 1.2
-
-- Updated keywords and commands for PEBakery v1.0.0
-- Added functionList for section headings
-- Added AutoComplete/Parameter Hints. (Note: Due to PEBakery's comma delimited syntax and the way Notepad++ has implemented AutoComplete, the parameter hints will not be shown after the 2nd argument.)
-
-### 1.1
-
-- Updated keywords and commands for PEBakery Prerelease beta 6
-- Highlighting of the variables nested in the double-quoted string
-- Partial highlighting of the section parameters in the dobule-quoted string
-- Attachment section folding 
-
-### 1.0.2
-
-- Updated keywords and commands for PEBakery Prerelease beta 5
-
-### 1.0.1
-
-- Updated keywords and commands for PEBakery Prerelease beta 4
-
-### 1.0.0
-
-- Initial release
+Please read [ChangeLog](CHANGELOG.md).
