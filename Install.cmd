@@ -1,7 +1,7 @@
 @echo off
 :: UDL Definition
 IF NOT EXIST "%AppData%\Notepad++\userDefineLangs" MKDIR "%AppData%\Notepad++\userDefineLangs"
-COPY "userDefineLangs\PEBakery.UDL.xml" "%AppData%\Notepad++\userDefineLangs"
+COPY "userDefineLangs\PEBakery.udl.xml" "%AppData%\Notepad++\userDefineLangs"
 
 :: Function List
 IF NOT EXIST "%AppData%\Notepad++\functionList" MKDIR "%AppData%\Notepad++\functionList"
