@@ -100,6 +100,52 @@
 				<Param name="Break" />
 			</Overload>
 		</KeyWord>
+		<KeyWord name="While" func="yes">
+			<Overload retVal="" descr="Loops a command based on an expression.">
+				<Param name="Expression" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Loops through a series of commands based on an expression.&#xA;&#xD;&#xA;&#xD;While,Expression,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End">
+				<Param name="Expression" />
+				<Param name="Begin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ForRange" func="yes">
+			<Overload retVal="" descr="Loops through a command based on the value of a counter.">
+				<Param name="%Variable%" />
+				<Param name="Start" />
+				<Param name="End" />
+				<Param name="Step" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Loops through a series of commands based on the value of a counter.&#xA;&#xD;&#xA;&#xD;ForRange,%Variable%,Start,End,Step,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End">
+				<Param name="%Variable%" />
+				<Param name="Start" />
+				<Param name="End" />
+				<Param name="Step" />
+				<Param name="Begin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ForEach" func="yes">
+			<Overload retVal="" descr="Enumerates the elements of a list and executes a command for each element in the list.">
+				<Param name="%Variable%" />
+				<Param name="List" />
+				<Param name="Command" />
+			</Overload>
+			<Overload retVal="" descr="Enumerates the elements of a list and executes its body for each element in the list.&#xA;&#xD;&#xA;&#xD;ForEach,%Variable%,List,Begin&#xA;&#xD;  Command&#xA;&#xD;  ...&#xA;&#xD;  Command&#xA;&#xD;End">
+				<Param name="%Variable%" />
+				<Param name="List" />
+				<Param name="Begin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Break" func="yes">
+			<Overload retVal="" descr="Terminate execution of a While/ForEach/ForRange loop.">
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Continue" func="yes">
+			<Overload retVal="" descr="Continue execution of a While/ForEach/ForRange loop.">
+			</Overload>
+		</KeyWord>
 		<!-- TODO: Operators -->
 		<KeyWord name="Run" func="yes">
 			<Overload retVal="" descr="Runs the commands found in a named [Section] of a script file.">
@@ -475,7 +521,15 @@
 				<Param name="%ListVar%" />
 				<Param name="Order" />
 				<Param name="[Delim=|]" />
-			</Overload>		
+			</Overload>
+			<Overload retVal="" descr="Generate a list of values from a given number range.">
+				<Param name="Range" />
+				<Param name="%ListVar%" />
+				<Param name="Start" />
+				<Param name="End" />
+				<Param name="Step" />
+				<Param name="[Delim=|]" />
+			</Overload>
 		</KeyWord>			
 		<!-- Math Operations -->		
 		<KeyWord name="Math" func="yes">
@@ -629,6 +683,16 @@
 				<Param name="%DestVar%" />
 				<Param name="Integer" />
 				<Param name="Size" />
+			</Overload>	
+			<Overload retVal="" descr="Converts an numerical code point to it's mapped character.">
+				<Param name="ToChar" />
+				<Param name="%DestVar%" />
+				<Param name="CodePoint" />
+			</Overload>	
+			<Overload retVal="" descr="Converts an mapped character to it's numerical code point (in Hex).">
+				<Param name="FromChar" />
+				<Param name="%DestVar%" />
+				<Param name="Char" />
 			</Overload>	
 		</KeyWord>				
 		<!-- Network Commands -->			
