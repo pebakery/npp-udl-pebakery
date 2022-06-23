@@ -191,6 +191,11 @@
 				<Param name="Message" />
 			</Overload>
 		</KeyWord>
+		<KeyWord name="Return" func="yes">
+			<Overload retVal="" descr="Stop running a section immediately and return to the calling script/section.">
+				<Param name="Value" />
+			</Overload>
+		</KeyWord>
 		<KeyWord name="Set" func="yes">
 			<Overload retVal="" descr="Changes or defines the value of a variable.">
 				<Param name="%Variable%" />

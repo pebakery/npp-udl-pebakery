@@ -1,17 +1,19 @@
-## Changelog
+# Changelog
 
-### v1.3
+## v1.x
+
+### v1.2.1
 
 - Updated commands, keywords and auto-complete for PEBakery v1.1.0.
 
-### v1.2
+### v1.2.0
 
 - Updated keywords and commands for PEBakery v1.0.0.
 - Added functionList for section headings.
 - Added AutoComplete/Parameter Hints.
   - Note: Due to PEBakery's comma delimited syntax and the way Notepad++ has implemented AutoComplete, the parameter hints will not be shown after the 2nd argument.
 
-### v1.1
+### v1.1.0
 
 - Updated keywords and commands for PEBakery Prerelease beta 6.
 - Highlighting of the variables nested in the double-quoted string.
