@@ -2,7 +2,7 @@
 
 ### v1.3
 
-- Updated keywords and commands for PEBakery v1.1.0.
+- Updated commands, keywords and auto-complete for PEBakery v1.1.0.
 
 ### v1.2
 
