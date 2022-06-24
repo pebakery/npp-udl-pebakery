@@ -859,7 +859,7 @@
 				<Param name="FilePath" />
 				<Param name="%DestVar%" />
 			</Overload>	
-			<Overload retVal="" descr="Returns the file extension from a path.">
+			<Overload retVal="" descr="Returns the file name (including extension) from a path.">
 				<Param name="FileName" />
 				<Param name="FilePath" />
 				<Param name="%DestVar%" />
