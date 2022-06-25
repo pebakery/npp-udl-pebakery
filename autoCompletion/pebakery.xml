@@ -864,7 +864,7 @@
 				<Param name="FilePath" />
 				<Param name="%DestVar%" />
 			</Overload>	
-			<Overload retVal="" descr="Returns the file extension from a path.">
+			<Overload retVal="" descr="Returns the file name (including extension) from a path.">
 				<Param name="FileName" />
 				<Param name="FilePath" />
 				<Param name="%DestVar%" />
@@ -1198,7 +1198,7 @@
 		</KeyWord>			
 		<KeyWord name="WimExtract" func="yes">
 			<Overload retVal="" descr="Extracts one or more files or directory trees from a Windows Imaging (.wim) file.">
-				<Param name="SrcDir" />
+				<Param name="SrcWim" />
 				<Param name="ImageIndex" />
 				<Param name="ExtractPath" />
 				<Param name="DestDir" />
