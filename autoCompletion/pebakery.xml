@@ -280,6 +280,12 @@
 				<Param name="%DestVar%" />
 			</Overload>
 		</KeyWord>
+		<KeyWord name="FileVersion" func="yes">
+			<Overload retVal="" descr="Retrieves the version number of the specified file.">
+				<Param name="FilePath" />
+				<Param name="%DestVar%" />
+			</Overload>
+		</KeyWord>
 		<KeyWord name="PathMove" func="yes">
 			<Overload retVal="" descr="Moves a file or directory.">
 				<Param name="SrcPath" />
