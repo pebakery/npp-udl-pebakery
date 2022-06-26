@@ -713,6 +713,7 @@
 				<Param name="[HashType=HashDigest]" />
 				<Param name="[[Referer=]" />
 				<Param name="[TimeOut=]" />
+				<Param name="[UserAgent=]" />
 				<Param name="[NOERR]]" />
 			</Overload>
 		</KeyWord>
@@ -1047,7 +1048,7 @@
 				<Param name="Path" />
 				<Param name="%DestVar%" />
 			</Overload>					
-			<Overload retVal="" descr="Checks to see if PEBakery was started by an account with Admin privileges.">
+			<Overload retVal="" descr="(Deprecated) Checks to see if PEBakery was started by an account with Admin privileges.">
 				<Param name="IsAdmin" />
 				<Param name="%DestVar%" />
 			</Overload>				
