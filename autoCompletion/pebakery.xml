@@ -264,7 +264,6 @@
 		<KeyWord name="FileDelete" func="yes">
 			<Overload retVal="" descr="Deletes a file.">
 				<Param name="FilePath" />
-				<Param name="DestPath" />
 				<Param name="[[NOWARN]" />
 				<Param name="[NOREC]]" />
 			</Overload>
