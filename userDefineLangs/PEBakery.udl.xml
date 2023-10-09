@@ -45,6 +45,7 @@
             </Keywords>
             <Keywords name="Keywords2">
                 HKLM HKCU HKCR HKU HKCC
+................REG_NONE REG_SZ REG_EXPANDED_SZ REG_BINARY REG_DWORD REG_MULTI_SZ REG_QWORD
                 DirPath FilePath
                 ANSI UTF8 UTF8BOM UTF16 UTF16LE UTF16BE
                 MD5 SHA1 SHA256 SHA384 SHA512
